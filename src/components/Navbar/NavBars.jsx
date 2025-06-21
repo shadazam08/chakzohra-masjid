@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Image, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
+import logImage from "../../assets/logo.svg";
 
 const NavBars = ({ language, setLanguage }) => {
   const labels = {
@@ -15,7 +16,7 @@ const NavBars = ({ language, setLanguage }) => {
     <Navbar expand="lg" dir={dir} className="custom-navbar">
       <Navbar.Brand as={Link} to={"/"}>
         <div className="custom-brand-link">
-          <Image src="/src/assets/logo.svg" width={200} />
+          <Image src={logImage} width={200} />
         </div>
       </Navbar.Brand>
 
