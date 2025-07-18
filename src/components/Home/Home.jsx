@@ -240,7 +240,7 @@ const Home = ({ language }) => {
         <StyledDate>
           {text.dateLabel} {formatDate(now, language)}
         </StyledDate>
-        <StyledTitle>{text.title}</StyledTitle>
+        {/* <StyledTitle>{text.title}</StyledTitle> */}
         <StyledDate>
           {text.hijriDate} {getHijriDate(language)}
         </StyledDate>
