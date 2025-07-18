@@ -201,9 +201,10 @@ const getHijriMonthName = (monthNumber, lang) => {
 
 const prayerKeys = ["fajr", "sun_rise", "dhuhr", "asr", "maghrib", "isha"];
 
-const Home = ({ language, darkMode }) => {
+const Home = ({ language }) => {
   const text = translations[language];
-  const now = new Date();
+  // const now = new Date();
+  const now = useMemo(() => new Date(), []);
   const currentMonth = now.toLocaleString("en-US", { month: "long" }).toLowerCase();
   const currentDate = now.getDate();
 
@@ -249,7 +250,7 @@ const Home = ({ language, darkMode }) => {
 
       <CardsRow>
         {prayerKeys.map((key) => (
-          <PrayerCard key={key} active={key === currentPrayer} dark={darkMode}>
+          <PrayerCard key={key} $active={key === currentPrayer}>
             <h5>{text.prayers?.[key]}</h5>
             <Time>{todayData?.[key] || "--"}</Time>
           </PrayerCard>
@@ -288,8 +289,8 @@ const CardsRow = styled.div`
 `;
 
 const PrayerCard = styled.div`
-  background: ${({ active }) => (active ? "#117a65" : "#fff")};
-  color: ${({ active }) => (active ? "#fff" : "#000")};
+  background: ${({ $active }) => ($active ? "#117a65" : "#fff")};
+  color: ${({ $active }) => ($active ? "#fff" : "#000")};
   border-radius: 16px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
   padding: 20px;
