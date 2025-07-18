@@ -7,7 +7,7 @@ const About = ({ language }) => {
       desc: 'Chakzohra Masjid has been serving the community with Islamic teachings, prayers, and events for many years.',
     },
     ur: {
-      title: 'چکزوہرا مسجد کے بارے میں',
+      title: 'چکزہرہ مسجد کے بارے میں',
       desc: 'چکزوہرا مسجد کئی سالوں سے اسلامی تعلیمات، نمازوں اور تقریبات کے ساتھ کمیونٹی کی خدمت کر رہی ہے۔',
     },
   }
