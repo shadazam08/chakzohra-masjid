@@ -1,0 +1,49 @@
+.custom-navbar {
+  background: linear-gradient(90deg, #2cc7a3 0%, #1ec0a2 100%) !important;
+}
+
+.custom-brand-link {
+  background-color: white !important;
+  border-radius: 5px !important;
+  padding: 5px !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important;
+  margin-left: 5px !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+.custom-brand-link:hover {
+  background-color: #000000 !important;
+}
+
+.custom-nav-link {
+  background-color: white !important;
+  margin: 5px !important;
+  color: #000000 !important;
+  font-size: medium !important;
+  border-radius: 5px !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+.custom-nav-link:hover {
+  background-color: #000000 !important;
+  color: #1ec0a2 !important;
+}
+
+.custom-nav-link.active {
+  background-color: #117a65 !important;
+  color: white !important;
+}
+
+.custom-button {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+  background-color: white !important;
+  color: #000000 !important;
+  font-size: medium !important;
+  border-radius: 5px !important;
+  border: none !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+.custom-button:hover {
+  background-color: #000000 !important;
+  color: #1ec0a2 !important;
+}
