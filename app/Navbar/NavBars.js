@@ -1,45 +1,52 @@
-'use client'
-import React from "react";
-import { Button, Image, Nav, Navbar } from "react-bootstrap";
-import Link from "next/link";
-import { useLanguage } from "../context/LanguageContext";
-import "./NavBars.css"; // Assuming you have a CSS file for custom styles
+
+'use client';
+
+import React from 'react';
+import { Button, Image, Nav, Navbar } from 'react-bootstrap';
+import Link from 'next/link';
+import { useLanguage } from '../context/LanguageContext';
+import './NavBars.css';
 
 const NavBars = () => {
-  const { language, setLanguage } = useLanguage()
+  const { language, setLanguage } = useLanguage();
+
   const labels = {
-    en: { home: "Home", about: "About", address: "Address" },
-    ur: { home: "ہوم", about: "ہمارے بارے میں", address: "پتہ" },
+    en: { home: 'Home', about: 'About', address: 'Address' },
+    ur: { home: 'ہوم', about: 'ہمارے بارے میں', address: 'پتہ' },
   };
 
-  const dir = language === "ur" ? "rtl" : "ltr";
+  const dir = language === 'ur' ? 'rtl' : 'ltr';
+
   return (
     <Navbar expand="lg" dir={dir} className="custom-navbar">
-      <Navbar.Brand as={Link} href={"/"}>
+      <Navbar.Brand as={Link} href="/">
         <div className="custom-brand-link">
-          <Image src="./logo.svg" width={200} alt="" />
+          <Image src="/logo.svg" width={200} alt="Logo" />
         </div>
       </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className={language === "ur" ? "ms-auto" : "me-auto"}>
-          <Nav.Link as={Link} href={"/"} className="custom-nav-link">
+        <Nav className={language === 'ur' ? 'ms-auto' : 'me-auto'}>
+          <Nav.Link as={Link} href="/" className="custom-nav-link">
             {labels[language].home}
           </Nav.Link>
 
-          <Nav.Link as={Link} href={"/about"} className="custom-nav-link">
+          <Nav.Link as={Link} href="/about" className="custom-nav-link">
             {labels[language].about}
           </Nav.Link>
 
-          <Nav.Link as={Link} href={"/address"} className="custom-nav-link">
+          <Nav.Link as={Link} href="/address" className="custom-nav-link">
             {labels[language].address}
           </Nav.Link>
         </Nav>
 
-        <Button className="custom-button" onClick={() => setLanguage(language === "en" ? "ur" : "en")}>
-          {language === "en" ? "اردو" : "English"}
+        <Button
+          className="custom-button"
+          onClick={() => setLanguage(language === 'en' ? 'ur' : 'en')}
+        >
+          {language === 'en' ? 'اردو' : 'English'}
         </Button>
       </Navbar.Collapse>
     </Navbar>
